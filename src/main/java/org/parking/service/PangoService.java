@@ -2,7 +2,9 @@ package org.parking.service;
 
 import java.time.LocalTime;
 
+import org.parking.model.ParkingTime;
+
 
 public interface PangoService {
-LocalTime checkIfPaid(Long carID);
+ParkingTime checkIfPaid(Long carID);
 }

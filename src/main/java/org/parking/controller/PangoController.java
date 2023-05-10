@@ -2,6 +2,7 @@ package org.parking.controller;
 
 import java.time.LocalTime;
 
+import org.parking.model.ParkingTime;
 import org.parking.service.PangoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,10 +20,9 @@ public class PangoController
 	}
 
 	@GetMapping("/car_check/{id_car}")
-	  public  ResponseEntity<LocalTime> checkCar(@PathVariable("id_car") Long carId) {
+	  public  ResponseEntity<ParkingTime> checkCar(@PathVariable("id_car") Long carId) {
 	    	 
-	    ResponseEntity<LocalTime> response = new ResponseEntity<>(service.checkIfPaid(carId), HttpStatus.OK);
-	  
+	    ResponseEntity<ParkingTime> response = new ResponseEntity<>(service.checkIfPaid(carId), HttpStatus.OK);
 	  return  response;
 	}
       
